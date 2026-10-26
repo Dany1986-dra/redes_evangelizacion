@@ -1,0 +1,337 @@
+/* Variables de Tema Claro */
+:root {
+  --bg-gradient: linear-gradient(135deg, #eef2ff 0%, #f3e8ff 100%);
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --text: #0f172a;
+  --text-muted: #475569;
+  --accent: #4338ca;
+  --accent-hover: #3730a3;
+  --border: rgba(226, 232, 240, 0.9);
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --btn-bg: #ffffff;
+}
+
+/* Variables de Tema Oscuro (WCAG AAA) */
+[data-theme="dark"] {
+  --bg-gradient: linear-gradient(135deg, #090d16 0%, #17153a 100%);
+  --card-bg: rgba(23, 32, 51, 0.88);
+  --text: #f8fafc;
+  --text-muted: #cbd5e1;
+  --accent: #a5b4fc;
+  --accent-hover: #c7d2fe;
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  --btn-bg: #1e293b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Foco visible accesibilidad */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botón flotante cambio de tema */
+.theme-toggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.6rem 0.8rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.theme-text {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .theme-toggle {
+    padding: 0.6rem 1.1rem;
+  }
+  .theme-text {
+    display: inline;
+  }
+}
+
+.theme-toggle:hover {
+  transform: scale(1.04);
+}
+
+/* Contenedor Principal */
+.container {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2.5rem 1.8rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  overflow: hidden; /* Evita desbordamiento en móviles */
+}
+
+/* Perfil e Imagen */
+.avatar-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.2rem;
+  display: block;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  border: 2px solid var(--border);
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+  word-wrap: break-word;
+}
+
+.subtitle {
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.bio {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
+
+/* Sección Info / Horarios */
+.info-section {
+  background: var(--btn-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.info-section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.info-section p {
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Tarjeta Cita de San Agustín */
+.quote-card {
+  background: var(--btn-bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 16px;
+  padding: 1.25rem 1rem;
+  margin-bottom: 1.8rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.quote-icon {
+  font-size: 1.4rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.quote-author {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* Lista de Enlaces */
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  background: var(--btn-bg);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 0.93rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  word-break: break-word; /* Protección contra textos largos */
+}
+
+.link-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.link-info {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-align: left;
+}
+
+.link-info i {
+  font-size: 1.3rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Herramientas de Difusión (Compartir + QR) */
+.share-section {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+}
+
+.share-btn {
+  background: var(--btn-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.5rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.share-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Modal de QR */
+.qr-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-modal.active {
+  display: flex;
+}
+
+.qr-content {
+  background: var(--btn-bg);
+  padding: 1.8rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 320px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.qr-content img {
+  width: 180px;
+  height: 180px;
+  margin: 1rem 0;
+}
+
+.close-qr {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Pie de página */
+footer {
+  margin-top: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}

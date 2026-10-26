@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Redes sociales, proyectos y recursos de evangelización en línea de la Fraternidad Seglar Agustina Recoleta.">
+  <title>Evangelización Digital | FSAR</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+  <!-- Fuentes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Iconos de Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Hoja de Estilos -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Selector de Tema -->
+  <button class="theme-toggle" id="themeBtn" aria-label="Cambiar a modo oscuro" title="Modo Oscuro">
+    <i class="bi bi-moon-fill" id="themeIcon" aria-hidden="true"></i>
+    <span id="themeText" class="theme-text">Modo Oscuro</span>
+  </button>
+
+  <main class="container fade-in">
+    <header class="profile-header">
+      <!-- Asegúrate de que agustinos.jpg esté guardada dentro de assets/img/ -->
+      <img src="assets/img/Santos Agustinos Recoletos.jpg" alt="FSAR" class="avatar-img" width="96" height="96">
+      <h1>Evangelización Digital</h1>
+      <p class="subtitle">Fraternidad Seglar Agustina Recoleta</p>
+      <p class="bio">Redes sociales, proyectos y recursos de evangelización en línea.</p>
+    </header>
+
+    <!-- Frase Inspiradora de San Agustín -->
+    <blockquote class="quote-card">
+      <i class="bi bi-quote quote-icon" aria-hidden="true"></i>
+      <p class="quote-text">«Nos hiciste, Señor, para ti, y nuestro corazón está inquieto hasta que descanse en ti.»</p>
+      <cite class="quote-author">— San Agustín de Hipona</cite>
+    </blockquote>
+
+    <!-- Lista Principal de Enlaces -->
+    <section class="links-list" aria-label="Enlaces a redes sociales y recursos">
+      <a href="https://chat.whatsapp.com/GnE0NgbhOXdFLgfzcYqS7H" class="link-card" target="_blank" rel="noopener noreferrer">
+        <div class="link-info">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i>
+          <span>Grupo de WhatsApp / Evangelio y Avisos</span>
+        </div>
+        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+      </a>
+
+      <a href="https://wa.me/50600000000?text=Hola,%20quisiera%20enviar%20una%20intenci%C3%B3n%20de%20oraci%C3%B3n:" class="link-card" target="_blank" rel="noopener noreferrer">
+        <div class="link-info">
+          <i class="bi bi-heart-fill" aria-hidden="true"></i>
+          <span>Enviar Intención de Oración (Privado)</span>
+        </div>
+        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+      </a>
+
+      <a href="https://www.facebook.com/Dany1986.dra" class="link-card" target="_blank" rel="noopener noreferrer">
+        <div class="link-info">
+          <i class="bi bi-facebook" aria-hidden="true"></i>
+          <span>Facebook / Comunidad</span>
+        </div>
+        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+      </a>
+
+      <a href="https://www.instagram.com/riveraalpizardaniel/" class="link-card" target="_blank" rel="noopener noreferrer">
+        <div class="link-info">
+          <i class="bi bi-instagram" aria-hidden="true"></i>
+          <span>Instagram</span>
+        </div>
+        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+      </a>
+
+      <a href="https://www.youtube.com/@daniel_rivera_alpizar" class="link-card" target="_blank" rel="noopener noreferrer">
+        <div class="link-info">
+          <i class="bi bi-youtube" aria-hidden="true"></i>
+          <span>Canal de YouTube</span>
+        </div>
+        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+      </a>
+
+      <a href="https://www.misiondigitalcr.com" class="link-card" target="_blank" rel="noopener noreferrer">
+        <div class="link-info">
+          <i class="bi bi-globe" aria-hidden="true"></i>
+          <span>Misión Digital CR</span>
+        </div>
+        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- Botones de Difusión -->
+    <div class="share-section">
+      <button class="share-btn" id="shareBtn"><i class="bi bi-share-fill"></i> Compartir</button>
+      <button class="share-btn" id="qrBtn"><i class="bi bi-qr-code"></i> Código QR</button>
+    </div>
+
+    <footer>
+      <p>© 2026 - Fraternidad Seglar Agustina Recoleta</p>
+    </footer>
+  </main>
+
+  <!-- Modal Código QR -->
+  <div class="qr-modal" id="qrModal">
+    <div class="qr-content">
+      <h3 style="font-family: 'Cinzel', serif;">Escanear para acceder</h3>
+      <img id="qrImage" src="" alt="Código QR del sitio web">
+      <br>
+      <button class="close-qr" id="closeQrBtn">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
